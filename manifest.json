@@ -1,0 +1,16 @@
+{
+  "name": "IceHub",
+  "short_name": "icehub",
+  "description": "Private meetings",
+  "icons": [
+    {
+      "src": "/dist/img/splash.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#0779e4",
+  "background_color": "#0779e4"
+}
