@@ -1,0 +1,112 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  font-family: 'Luckiest Guy';
+  color: white;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;        /* for single line flex container */
+  align-content: center;
+  background-image: url('/img/cat_blue_sky.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.foreground {
+  text-align: center;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.foreground .icon {
+  font-size: 7rem;
+}
+.foreground .title {
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* spinner */
+
+#loading {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #2c3534;
+}
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  width:100px; height:100px;
+  margin: 100px auto;
+  display: block;
+  height: 70%;
+}
+
+.spinner-container .path {
+  stroke-dasharray: 1,150; /* 1%, 101% circumference */
+  stroke-dashoffset: 0;
+  stroke: rgba(150, 150, 150, 0.7);
+  stroke-linecap: round;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes rotate{
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,150;  /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -35;   /* 25% circumference */
+  }
+  100% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -124;  /* -99% circumference */
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1,150;  /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -35;   /* 25% circumference */
+  }
+  100% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -124;  /* -99% circumference */
+  }
+}

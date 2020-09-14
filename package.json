@@ -1,18 +1,21 @@
 {
-  "name": "icehub",
+  "name": "freecatradio",
   "version": "1.0.0",
-  "description": "Private meetings",
+  "description": "Freedom Cats Radio",
   "scripts": {
     "start": "node server.js",
-    "devStart": "SSL=1 nodemon server.js"
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "freedom",
+    "cats",
+    "radio"
+  ],
+  "author": "liebsen",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.3",
     "express": "^4.17.1",
-    "peer": "^0.5.3",
     "shortid": "^2.2.15",
     "socket.io": "^2.3.0"
   },
