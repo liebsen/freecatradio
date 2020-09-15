@@ -1,5 +1,5 @@
 nowPlaying = () => {
-  axios.get('http://icecast.freecatradio.com/status-json.xsl').then(res => {
+  axios.get('https://icecast.freecatradio.com/status-json.xsl').then(res => {
     document.querySelector('.nowplaying').innerHTML = res.data.icestats.source.title
   })  
 }
