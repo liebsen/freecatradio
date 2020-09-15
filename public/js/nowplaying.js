@@ -5,5 +5,5 @@ nowPlaying = () => {
 }
 setInterval(() => {
   nowPlaying()
-}, 30000)
+}, 10000)
 nowPlaying()
