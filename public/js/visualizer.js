@@ -1,3 +1,6 @@
+var modes = ['bar-graph', 'waveform', 'rgb-bar-graph']
+var mode = modes[0]
+
 function visualize(from, source) {
   var select = {
     value: 'bar-graph'
@@ -13,22 +16,20 @@ function visualize(from, source) {
     var src = context.createMediaStreamSource(source);
   }
 
-  console.log(src);
   var analyser = context.createAnalyser();
   var listen = context.createGain();
-
   var canvas = document.getElementById("canvas");
   var WIDTH = (canvas.width = window.innerWidth);
   var HEIGHT = (canvas.height = window.innerHeight);
 
   var ctx = canvas.getContext("2d");
 
-  var mouseX = 0;
+  /* var mouseX = 0;
   var mouseY = 0;
   canvas.addEventListener("mousemove", function(e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+  });*/
 
   src.connect(listen);
   listen.connect(analyser);
@@ -39,7 +40,6 @@ function visualize(from, source) {
   var frequencyBins = analyser.fftSize / 2;
 
   var bufferLength = analyser.frequencyBinCount;
-  console.log(bufferLength);
   var dataArray = new Uint8Array(bufferLength);
   var dataHistory = [];
 
@@ -69,8 +69,8 @@ function visualize(from, source) {
 
     ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-    ctx.lineWidth = 1;
+    /*
+     ctx.lineWidth = 1;
     ctx.strokeStyle = "#fff";
     ctx.beginPath();
     ctx.moveTo(mouseX, 0);
@@ -87,9 +87,9 @@ function visualize(from, source) {
         " Hz",
       mouseX,
       mouseY
-    );
+    );*/ 
 
-    if (select.value == "bar-graph") {
+    if (mode == "bar-graph") {
       analyser.getByteFrequencyData(dataArray);
       for (var i = 0; i < bufferLength; i++) {
         let x = Math.floor(Math.log(i) / scale);
@@ -109,7 +109,7 @@ function visualize(from, source) {
           HEIGHT
         );
       }
-    } else if (select.value == "waveform") {
+    } else if (mode == "waveform") {
       analyser.getByteFrequencyData(dataArray);
       let start = 0//dataArray.find(a=> Math.max.apply('',dataArray));
       analyser.getByteTimeDomainData(dataArray);
@@ -131,7 +131,7 @@ function visualize(from, source) {
       }
       ctx.lineTo(WIDTH, dataArray[0] / 128.0 * HEIGHT / 2);
       ctx.stroke();
-    } else if (select.value == "rgb-bar-graph") {
+    } else if (mode == "rgb-bar-graph") {
       //ctx.globalCompositeOperation = "hue";
       analyser.getByteFrequencyData(dataArray);
       var imgData = ctx.createImageData(WIDTH, HEIGHT);

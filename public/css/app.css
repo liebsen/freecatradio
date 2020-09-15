@@ -27,13 +27,10 @@ body {
   background-color: transparent;
   z-index: 1;
 }
-nano /etc/turnserver.conf
-.foreground .icon {
-  font-size: 7rem;
-}
 
 .foreground h1 {
   margin-top: 0.75rem;
+  margin-bottom: 0;
   font-size: 5rem;
   text-transform: uppercase;
   text-shadow: 6px 6px 0 rgba(0,0,0,0.75);
@@ -44,22 +41,24 @@ nano /etc/turnserver.conf
 }
 
 .foreground h4 {
+  margin-top: 0;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.75);
 }
 
 .foreground .mdi {
   top: 0;
-  font-size: 5rem;
+  font-size: 8rem;
   position: relative;
-  text-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 .foreground .mdi:hover {
-  text-shadow: 0px 5px #006066;
+  top: 4px;
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .foreground .mdi:active {
-  top: 4px;
+  top: 8px;
   text-shadow: 0px 0px #d3545d;
 }
 
@@ -147,6 +146,11 @@ nano /etc/turnserver.conf
   }
 }
 
+@media screen and (min-width:769px) {
+  .foreground h1 {
+    margin-top: 0;
+  }
+}
 
 @media screen and (max-width:360px) {
   .foreground h1 {
