@@ -6,6 +6,7 @@ html, body {
 body {
   background-color: black;
   font-family: 'Luckiest Guy';
+  font-weight: 400;
   color: white;
 }
 
@@ -30,9 +31,43 @@ body {
 .foreground .icon {
   font-size: 7rem;
 }
-.foreground .title {
+
+.foreground h1 {
+  margin-top: 0;
   font-size: 5rem;
   text-transform: uppercase;
+  text-shadow: 6px 6px 0 rgba(0,0,0,0.75);
+}
+
+.foreground h2 {
+  text-shadow: 3px 3px 0 rgba(0,0,0,0.75);
+}
+
+.foreground h4 {
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.75);
+}
+
+.foreground .mdi {
+  top: 0;
+  position: relative;
+  text-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.foreground .mdi:hover {
+  text-shadow: 0px 5px #006066;
+}
+
+.foreground .mdi:active {
+  top: 4px;
+  text-shadow: 0px 0px #d3545d;
+}
+
+.foreground .mdi-play-circle {
+  color: #79d70f;
+}
+
+.foreground .mdi-pause-circle {
+  color: #ec0101;
 }
 
 .pointer {

@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 togglePlay = btn => {
   var audio = document.getElementById('stream')
-  if (btn.classList.contains('mdi-motion-play')) {
-    btn.classList.remove('mdi-motion-play')
-    btn.classList.add('mdi-motion-pause')
+  if (btn.classList.contains('mdi-play-circle')) {
+    btn.classList.remove('mdi-play-circle')
+    btn.classList.add('mdi-pause-circle')
     document.getElementById("canvas").style.display = 'block'
     audio.play()
     visualize(0, audio)  
   } else {
     audio.pause()
-    btn.classList.remove('mdi-motion-pause')
-    btn.classList.add('mdi-motion-play')
+    btn.classList.remove('mdi-pause-circle')
+    btn.classList.add('mdi-play-circle')
     document.getElementById("canvas").style.display = 'none'
   }
 }
