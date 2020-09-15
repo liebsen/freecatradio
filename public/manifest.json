@@ -1,0 +1,16 @@
+{
+  "name": "FreeCatRadio",
+  "short_name": "freecatradio",
+  "description": "Freedom Cats Radio",
+  "icons": [
+    {
+      "src": "/img/splash.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#0779e4",
+  "background_color": "#0779e4"
+}
