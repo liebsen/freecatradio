@@ -27,13 +27,13 @@ body {
   background-color: transparent;
   z-index: 1;
 }
-
+nano /etc/turnserver.conf
 .foreground .icon {
   font-size: 7rem;
 }
 
 .foreground h1 {
-  margin-top: 0;
+  margin-top: 0.75rem;
   font-size: 5rem;
   text-transform: uppercase;
   text-shadow: 6px 6px 0 rgba(0,0,0,0.75);
@@ -49,6 +49,7 @@ body {
 
 .foreground .mdi {
   top: 0;
+  font-size: 5rem;
   position: relative;
   text-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 }
@@ -143,5 +144,12 @@ body {
   100% {
     stroke-dasharray: 90,150; /* 70%, 101% circumference */
     stroke-dashoffset: -124;  /* -99% circumference */
+  }
+}
+
+
+@media screen and (max-width:360px) {
+  .foreground h1 {
+    font-size: 3rem;
   }
 }
