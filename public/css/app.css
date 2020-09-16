@@ -54,6 +54,7 @@ body {
   font-size: 8rem;
   position: relative;
   text-shadow: 0px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s linear;
 }
 
 .foreground .mdi:hover {
@@ -83,13 +84,13 @@ body {
   position: relative;
   top: 3px;
   font-size: 3rem;
-  text-shadow: 0px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s linear;
 }
-
 
 .social .mdi:hover {
   top: 0;
-  text-shadow: 0px 12px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 .social .mdi:active {
