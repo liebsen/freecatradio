@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#0779e4"/>
+  <meta name="theme-color" content="#2679d7"/>
   <meta property="og:title" content="Free Cat Radio" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://freecatradio.com" />
@@ -27,11 +27,11 @@
   </div>
   <div id="app">
     <canvas id="canvas" hidden></canvas>
-    <audio id="stream" src="https://icecast.freecatradio.com/stream" crossorigin="anonymous" controls></audio>
+    <audio id="stream" src="https://icecast.freecatradio.com/stream" crossorigin="anonymous" preload="metadata" autoplay controls></audio>
     <div class="foreground">
       <h1 class="title">Free Cat Radio</h1>
       <span class="icon pointer">
-        <span class="mdi mdi-play-circle" onclick="togglePlay(this)"></span>
+        <span class="mdi mdi-play-circle" id="playBtn"></span>
       </span>
       <h4>Now playing...</h4>
       <h2 class="nowplaying">...</h2>

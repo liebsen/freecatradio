@@ -1,3 +1,6 @@
+let audio = document.getElementById("stream")
+let playBtn = document.getElementById("playBtn")
+
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loading')) {
     document.getElementById('loading').classList.add('animated', 'fadeOut')
@@ -7,18 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-togglePlay = btn => {
-  var audio = document.getElementById('stream')
-  if (btn.classList.contains('mdi-play-circle')) {
-    btn.classList.remove('mdi-play-circle')
-    btn.classList.add('mdi-pause-circle')
+togglePlay = () => {
+  if (playBtn.classList.contains('mdi-play-circle')) {
+    playBtn.classList.remove('mdi-play-circle')
+    playBtn.classList.add('mdi-pause-circle')
     document.getElementById("canvas").style.display = 'block'
     audio.play()
     visualize(0, audio)  
   } else {
     audio.pause()
-    btn.classList.remove('mdi-pause-circle')
-    btn.classList.add('mdi-play-circle')
+    audio.currentTime = 0
+    playBtn.classList.remove('mdi-pause-circle')
+    playBtn.classList.add('mdi-play-circle')
     document.getElementById("canvas").style.display = 'none'
   }
+}
+
+playBtn.onclick = () => {
+  togglePlay()
 }
