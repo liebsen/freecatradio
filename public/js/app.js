@@ -32,7 +32,7 @@ playBtn.onclick = () => {
 
 window.onerror = function (msg, url, lineNo, columnNo, error) {
   const err = `[freecatradio] error: ${msg}${url}:${lineNo} -- ${error}`
-  let ep = 'https://hub.overlemon.com/debug'
+  let ep = 'https://overlemon.com/debug'
   if (['192.168.2.13:3000', 'localhost:3000'].includes(location.host)) {  
     ep = 'https://192.168.2.13:3000/debug'
   }
