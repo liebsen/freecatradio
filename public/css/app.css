@@ -8,6 +8,7 @@ body {
   font-family: 'Luckiest Guy';
   font-weight: 500;
   color: white;
+  -webkit-font-smoothing: antialiased;
 }
 
 #app {
@@ -34,7 +35,7 @@ body {
   margin-bottom: 0;
   font-size: 5rem;
   text-transform: uppercase;
-  text-shadow: 6px 6px 0 rgba(0,0,0,0.75);
+  text-shadow: 10px 10px 0 rgba(0,0,0,0.75);
 }
 
 .foreground h2 {
