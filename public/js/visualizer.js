@@ -1,19 +1,23 @@
 var modes = ['bar-graph', 'waveform', 'rgb-bar-graph']
 var mode = modes[0]
+var context = null
+var src = null
 
 function visualize(from, source) {
   var select = {
     value: 'bar-graph'
   }
 
-  var context = new AudioContext();
+  if (!context) {
+    context = new AudioContext();
 
-  if (0 == from) {
-    var src = context.createMediaElementSource(source);
-  } else if (1 == from) {
-    var src = context.createMediaStreamSource(source);
-  } else if (2 == from) {
-    var src = context.createMediaStreamSource(source);
+    if (0 == from) {
+      src = context.createMediaElementSource(source);
+    } else if (1 == from) {
+      src = context.createMediaStreamSource(source);
+    } else if (2 == from) {
+      src = context.createMediaStreamSource(source);
+    }
   }
 
   var analyser = context.createAnalyser();
@@ -21,7 +25,6 @@ function visualize(from, source) {
   var canvas = document.getElementById("canvas");
   var WIDTH = (canvas.width = window.innerWidth);
   var HEIGHT = (canvas.height = window.innerHeight);
-
   var ctx = canvas.getContext("2d");
 
   /* var mouseX = 0;
