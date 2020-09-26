@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 togglePlay = () => {
   if (playBtn.classList.contains('mdi-play-circle')) {
     playBtn.classList.remove('mdi-play-circle')
-    playBtn.classList.add('mdi-pause-circle')
+    playBtn.classList.add('mdi-stop-circle')
     document.getElementById("canvas").style.display = 'block'
     audio.play()
     visualize(0, audio)  
   } else {
     audio.pause()
     audio.currentTime = 0
-    playBtn.classList.remove('mdi-pause-circle')
+    playBtn.classList.remove('mdi-stop-circle')
     playBtn.classList.add('mdi-play-circle')
     document.getElementById("canvas").style.display = 'none'
   }

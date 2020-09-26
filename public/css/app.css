@@ -72,7 +72,7 @@ body {
   color: #79d70f;
 }
 
-.foreground .mdi-pause-circle {
+.foreground .mdi-stop-circle {
   color: #ec0101;
 }
 
@@ -119,6 +119,9 @@ body {
   color: #ff4500;
 }
 
+.social .mdi-github {
+  color: #171515;
+}
 
 .pointer {
   cursor: pointer;
