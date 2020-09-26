@@ -2,4 +2,4 @@
 
 > Freedom Cats Radio
 
-[Radio](https://freecatradio.com).
+[Listen Online](https://freecatradio.com).
