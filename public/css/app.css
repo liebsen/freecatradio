@@ -51,7 +51,7 @@ body {
 }
 
 #playBtn {
-  background-color: #79d70f;
+  background-color: #ec0101;
   top: 4px;
   font-size: 8rem;
   position: relative;
@@ -69,7 +69,7 @@ body {
 }
 
 #playBtn.is-playing {
-  background-color: #ec0101;
+  background-color: #79d70f;
 }
 
 #playBtn .mdi-power {
