@@ -42,6 +42,8 @@ body {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-shadow: 3px 3px 0 rgba(0,0,0,0.75);
 }
 
@@ -231,9 +233,24 @@ body {
   }
 }
 
-@media screen and (max-width:360px), print {
+@media screen and (max-width:440px), print {
   .foreground h1 {
     font-size: 3rem;
+  }
+  .foreground h2 {
+    font-size: 1.25rem;
+  }
+  .social .mdi {
+    font-size: 2.25rem;
+  }
+  #playBtn {
+    font-size: 4.5rem;
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    line-height: 80px;
   }
 }
 
