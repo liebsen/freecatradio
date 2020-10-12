@@ -1,5 +1,6 @@
 let audio = document.getElementById("stream")
 let playBtn = document.getElementById("playBtn")
+let nextVsualzr = document.getElementById("nextVsualzr")
 
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loading')) {
@@ -13,15 +14,34 @@ document.addEventListener('DOMContentLoaded', () => {
 togglePlay = () => {
   if (!playBtn.classList.contains('is-playing')) {
     playBtn.classList.add('is-playing')
-    document.getElementById("canvas").style.display = 'block'
+    document.getElementById("canvas").classList.remove('fadeOut')
+    document.getElementById("nextVsualzr").classList.remove('fadeOut')
+    document.getElementById("canvas").classList.add('fadeIn')
+    document.getElementById("nextVsualzr").classList.add('fadeIn')
     audio.play()
     visualize(0, audio)  
   } else {
     audio.pause()
     audio.currentTime = 0
     playBtn.classList.remove('is-playing')
-    document.getElementById("canvas").style.display = 'none'
+    document.getElementById("canvas").classList.remove('fadeIn')
+    document.getElementById("nextVsualzr").classList.remove('fadeIn')
+    document.getElementById("canvas").classList.remove('fadeOut')
+    document.getElementById("nextVsualzr").classList.add('fadeOut')
   }
+}
+
+let nextVisualizer = () => {
+  let index = modes.findIndex(e => e === mode)
+  index++
+  if (index >= modes.length) {
+    index = 0
+  }
+  mode = modes[index]
+}
+
+nextVsualzr.onclick = () => {
+  nextVisualizer()
 }
 
 playBtn.onclick = () => {

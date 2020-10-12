@@ -1,13 +1,9 @@
 var modes = ['bar-graph', 'waveform', 'rgb-bar-graph']
-var mode = modes[0]
+var mode = modes[1]
 var context = null
 var src = null
 
 function visualize(from, source) {
-  var select = {
-    value: 'bar-graph'
-  }
-
   if (!context) {
     context = new AudioContext();
 

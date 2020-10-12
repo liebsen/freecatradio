@@ -52,6 +52,10 @@ body {
   text-shadow: 2px 2px 0 rgba(0,0,0,0.75);
 }
 
+.nowplaying {
+  min-height: 3.5rem;
+}
+
 #playBtn {
   background-color: #ec0101;
   top: 4px;
