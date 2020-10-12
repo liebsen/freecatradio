@@ -1,5 +1,5 @@
 var modes = ['bar-graph', 'waveform', 'rgb-bar-graph']
-var mode = modes[1]
+var mode = modes[0]
 var context = null
 var src = null
 

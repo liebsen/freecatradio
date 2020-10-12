@@ -1,6 +1,6 @@
 let audio = document.getElementById("stream")
 let playBtn = document.getElementById("playBtn")
-let nextVsualzr = document.getElementById("nextVsualzr")
+let switchVisualiser = document.getElementById("switchVisualiser")
 
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loading')) {
@@ -12,22 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 togglePlay = () => {
+  document.getElementById("switchVisualiser").classList.remove('fadeOut', 'fadeIn')
   if (!playBtn.classList.contains('is-playing')) {
     playBtn.classList.add('is-playing')
-    document.getElementById("canvas").classList.remove('fadeOut')
-    document.getElementById("nextVsualzr").classList.remove('fadeOut')
-    document.getElementById("canvas").classList.add('fadeIn')
-    document.getElementById("nextVsualzr").classList.add('fadeIn')
+    document.getElementById("canvas").classList.add('active')
+    document.getElementById("switchVisualiser").classList.add('active')
     audio.play()
     visualize(0, audio)  
   } else {
     audio.pause()
     audio.currentTime = 0
     playBtn.classList.remove('is-playing')
-    document.getElementById("canvas").classList.remove('fadeIn')
-    document.getElementById("nextVsualzr").classList.remove('fadeIn')
-    document.getElementById("canvas").classList.remove('fadeOut')
-    document.getElementById("nextVsualzr").classList.add('fadeOut')
+    document.getElementById("canvas").classList.remove('active')
+    document.getElementById("switchVisualiser").classList.remove('active')
   }
 }
 
@@ -40,7 +37,7 @@ let nextVisualizer = () => {
   mode = modes[index]
 }
 
-nextVsualzr.onclick = () => {
+switchVisualiser.onclick = () => {
   nextVisualizer()
 }
 
