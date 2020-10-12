@@ -16,6 +16,7 @@ togglePlay = () => {
   if (!playBtn.classList.contains('is-playing')) {
     playBtn.classList.add('is-playing')
     document.getElementById("canvas").classList.add('active')
+    document.getElementById("overlay").classList.add('active')
     document.getElementById("switchVisualiser").classList.add('active')
     audio.play()
     visualize(0, audio)  
@@ -24,6 +25,7 @@ togglePlay = () => {
     audio.currentTime = 0
     playBtn.classList.remove('is-playing')
     document.getElementById("canvas").classList.remove('active')
+    document.getElementById("overlay").classList.remove('active')
     document.getElementById("switchVisualiser").classList.remove('active')
   }
 }

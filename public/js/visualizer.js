@@ -1,4 +1,5 @@
-var modes = ['bar-graph', 'waveform', 'rgb-bar-graph']
+// var modes = ['bar-graph', 'waveform', 'rgb-bar-graph']
+var modes = ['bar-graph', 'waveform']
 var mode = modes[0]
 var context = null
 var src = null
@@ -66,7 +67,7 @@ function visualize(from, source) {
     var x = 0;
     var scale = Math.log(frequencyBins - 1) / WIDTH;
 
-    ctx.fillStyle = "#000";
+    ctx.fillStyle = "transparent";
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
     /*
      ctx.lineWidth = 1;

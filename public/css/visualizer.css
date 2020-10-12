@@ -18,7 +18,8 @@
   opacity: 0.85;
 }
 
-#canvas {
+#canvas,
+#overlay {
   display: block;
   opacity: 0;
   position: fixed;
@@ -27,11 +28,25 @@
   width: 100%;
   height: 100%;
   transition: opacity 0.5s ease-in;
-  transform: scale(1.75) perspective(240px) rotateY(-11deg) rotateX(2deg) rotate(2deg) translateX(2em);
+}
+
+#overlay {
+  z-index: 10;
+  background-color: black;
+}
+
+#canvas {
+  z-index: 20;
+  background-color: transparent;
+  transform: scale(0.75) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg) translateX(-2em) translateY(-2em);
   filter: blur(1px);
 }
 
 #canvas.active {
+  opacity: 1;
+}
+
+#overlay.active {
   opacity: 0.75;
 }
 
