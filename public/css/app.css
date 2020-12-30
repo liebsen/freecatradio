@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background-color: black;
+  background-color: #7393d0;
   font-family: 'Luckiest Guy';
   font-weight: 500;
   color: white;
@@ -18,9 +18,9 @@ body {
   justify-content: center;
   align-items: center;        /* for single line flex container */
   align-content: center;
-  background-image: url('/img/cat_blue_sky.jpg');
+  background-image: url('/img/cute-4224819_960_720.jpeg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center right;
   background-size: cover;
 }
 
