@@ -4,16 +4,19 @@ nowPlaying = () => {
   const nowplaying = document.querySelector('.nowplaying')
   const headphones = '<span class="mdi mdi-headphones"></span> '
   const microphone = '<span class="mdi mdi-microphone-variant"></span> '
-  let icon = ''
-  let currentTitle = ''
   axios.get('https://icecast.freecatradio.com/status-json.xsl').then(res => {
     let sources = res.data.icestats.source
-    if (sources[1] && sources[1].title) {
-      icon = microphone
-      currentTitle = sources[1].title
+    let currentTitle = ''
+    let icon = headphones
+    if (Object.keys(sources).length === 1) {
+      currentTitle = sources.title
     } else {
-      icon = headphones
-      currentTitle = sources[0].title
+      if (sources[1] && sources[1].title) {
+        icon = microphone
+        currentTitle = sources[1].title
+      } else {
+        currentTitle = sources[0].title
+      }
     }
     if (currentSong !== currentTitle) {
       nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
