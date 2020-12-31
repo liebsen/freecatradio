@@ -8,8 +8,8 @@ nowPlaying = () => {
     let sources = res.data.icestats.source
     let currentTitle = ''
     let icon = headphones
-    console.log(sources)
-    if (Object.keys(sources).length === 1) {
+    console.log(sources.length)
+    if (sources.length === 1) {
       currentTitle = sources.title
     } else {
       if (sources[1] && sources[1].title) {
