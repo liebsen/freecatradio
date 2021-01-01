@@ -33,7 +33,7 @@ body {
 .foreground h1 {
   margin-top: 0.75rem;
   margin-bottom: 0;
-  font-size: 5rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   text-shadow: 10px 10px 0 rgba(0,0,0,0.75);
 }
