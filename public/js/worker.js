@@ -55,7 +55,7 @@ self.addEventListener('fetch', event => {
         }
     });
     event.respondWith(new Response(stream, {
-        headers: {'Content-Type': 'audio/mpeg'}
+        headers: {'Content-Type': 'audio/mp3'}
     }));
 });
 self.addEventListener('install', event => {

@@ -1,13 +1,13 @@
 #switchVisualiser {
   opacity: 0;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   z-index: 99;
   bottom: 0;
   right: 0;
-  width: 4rem;
-  height: 4rem;
-  transition: opacity 0.5s ease-in;
+  width: 2.25rem;
+  height: 2.25rem;
+  transition: opacity 0.25s ease-in;
 }
 
 #switchVisualiser.active {
