@@ -25,7 +25,7 @@ nowPlaying = () => {
     }
     if (listeners !== currentListeners) {
       console.log('👂', listeners)
-      listeners = currentListeners
+      currentListeners = listeners
     }
     if (currentSong !== currentTitle) {
       nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
