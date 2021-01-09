@@ -8,20 +8,25 @@ nowPlaying = () => {
     let sources = res.data.icestats.source
     let currentTitle = ''
     let icon = headphones
+    let listeners = 0
     if (sources.title) {
       currentTitle = sources.title
+      listeners = sources.listeners
     } else {
       if (sources[1] && sources[1].title) {
         icon = microphone
         currentTitle = sources[1].title
+        listeners = sources[1].listeners
       } else {
         currentTitle = sources[0].title
+        listeners = sources[0].listeners
       }
     }
     if (currentSong !== currentTitle) {
       nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
       nowplaying.classList.add('fadeOutUp')
       currentSong = currentTitle
+      console.log('👂', listeners)
       setTimeout(() => {
         nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
         nowplaying.innerHTML = icon + decodeURIComponent(currentTitle)
