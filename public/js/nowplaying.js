@@ -1,4 +1,5 @@
 let currentSong = null
+let currentListeners = null
 
 nowPlaying = () => {
   const nowplaying = document.querySelector('.nowplaying')
@@ -22,11 +23,14 @@ nowPlaying = () => {
         listeners = sources[0].listeners
       }
     }
+    if (listeners !== currentListeners) {
+      console.log('👂', listeners)
+      listeners = currentListeners
+    }
     if (currentSong !== currentTitle) {
       nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
       nowplaying.classList.add('fadeOutUp')
       currentSong = currentTitle
-      console.log('👂', listeners)
       setTimeout(() => {
         nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
         nowplaying.innerHTML = icon + decodeURIComponent(currentTitle)
