@@ -48,8 +48,7 @@ let nextColor = () => {
     index = 0
   }
   color = `#${colors[index]}`
-  document.getElementById('overlay').style.backgroundColor = `${color}33`
-  console.log(color)
+  // document.getElementById('overlay').style.backgroundColor = `${color}99`
 }
 
 switchVisualiser.onclick = () => {
@@ -57,7 +56,6 @@ switchVisualiser.onclick = () => {
 }
 
 switchColor.onclick = () => {
-  console.log('n')
   nextColor()
 }
 

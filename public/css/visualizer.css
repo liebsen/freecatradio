@@ -24,6 +24,7 @@
   position: fixed;
   left: 0;
   top: 0;
+  background-color: #0009;
   width: 100%;
   height: 100%;
   transition: opacity 0.5s ease-in;

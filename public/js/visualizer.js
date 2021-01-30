@@ -10,7 +10,7 @@ var d = {
   height: (canvas.height = window.innerHeight)
 }
 
-document.getElementById('overlay').style.backgroundColor = `${color}33`
+// document.getElementById('overlay').style.backgroundColor = `${color}ee`
 function at(e, t) {
   for (e.moveTo(t[0], t[1]), Ce = 2; Ce < t.length - 1; Ce += 2) e.lineTo(t[Ce], t[Ce + 1])
 }
