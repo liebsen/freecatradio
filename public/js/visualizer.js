@@ -1,5 +1,7 @@
 var modes = ['waves1', 'waves2', 'waves3', 'waves4', 'waves5', 'waves6']
+var colors = ['e11d74', 'f86808', 'cf1b1b', '394989', '2b580c', '21209c', '34a853', '5b5656', '8105d8']
 var mode = modes[0]
+var color = `#${colors[0]}`
 var context = null
 var src = null
 var canvas = document.getElementById("canvas");
@@ -7,9 +9,8 @@ var d = {
   width: (canvas.width = window.innerWidth),
   height: (canvas.height = window.innerHeight)
 }
-// var z = "#f86808"
-var z = "#e11d74"
 
+document.getElementById('overlay').style.backgroundColor = `${color}33`
 function at(e, t) {
   for (e.moveTo(t[0], t[1]), Ce = 2; Ce < t.length - 1; Ce += 2) e.lineTo(t[Ce], t[Ce + 1])
 }
@@ -24,7 +25,7 @@ function ct(e) {
 }
 
 function tt(e, t, i, a, o) {
-  e.beginPath(), e.arc(t, i, a, 0, 2 * Math.PI), e.closePath(), e.fillStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", " + o + ")", e.fill()
+  e.beginPath(), e.arc(t, i, a, 0, 2 * Math.PI), e.closePath(), e.fillStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", " + o + ")", e.fill()
 }
 
 function it(e, t, i, a, o, n) {
@@ -89,56 +90,56 @@ function visualize(source) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.1)", p.fill(), p.closePath(), p.beginPath(), p.moveTo(0, d.height), e = [];
+      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.1)", p.fill(), p.closePath(), p.beginPath(), p.moveTo(0, d.height), e = [];
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i + i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.15)", p.fill(), p.closePath(), p.beginPath(), p.moveTo(0, d.height), e = [];
+      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.15)", p.fill(), p.closePath(), p.beginPath(), p.moveTo(0, d.height), e = [];
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i + i + i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.2)", p.fill(), p.closePath(), p.beginPath(), p.moveTo(0, d.height), e = [];
+      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.2)", p.fill(), p.closePath(), p.beginPath(), p.moveTo(0, d.height), e = [];
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i + i + i + i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.25)", p.fill(), p.closePath()
+      it(p, e, .5), p.lineTo(re, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.25)", p.fill(), p.closePath()
     } else if (mode == "waves2") {
       p.clearRect(0, 0, d.width, d.height), p.lineWidth = 2, p.miterLimit = 1, p.beginPath(), p.moveTo(0, d.height);
       for (var e = 0; e < me.length / 2; e += 1) p.lineTo(e * d.width / me.length * 2, d.height - me[e] * d.height / 255 + 2);
-      p.strokeStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.5)", p.stroke(), p.closePath()
+      p.strokeStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.5)", p.stroke(), p.closePath()
     } else if (mode == "waves3") {
       p.clearRect(0, 0, d.width, d.height), p.lineWidth = 1, p.miterLimit = 1, p.beginPath();
       for (var e = 0; e < d.width; e += 3) {
           var t = Math.round(me.length / 2 * e / d.width);
-          p.moveTo(e, d.height), p.lineTo(e, d.height - me[t] * d.height / 255 + 2), p.strokeStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.5)"
+          p.moveTo(e, d.height), p.lineTo(e, d.height - me[t] * d.height / 255 + 2), p.strokeStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.5)"
       }
       p.stroke()
     } else if (mode == "waves4") {
       p.clearRect(0, 0, d.width, d.height), p.lineWidth = 1, p.miterLimit = 1, p.beginPath(), p.moveTo(0, d.height);
       for (var e = 0; e < me.length / 2; e += 1) p.lineTo(e * d.width / me.length * 2, d.height - me[e] * d.height / 255 + 2);
-      p.lineTo(d.width, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.5)", p.fill(), p.closePath()
+      p.lineTo(d.width, d.height), p.lineTo(0, d.height), p.fillStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.5)", p.fill(), p.closePath()
     } else if (mode == "waves5") {
-      p.clearRect(0, 0, d.width, d.height), p.lineWidth = 3, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.2)";
+      p.clearRect(0, 0, d.width, d.height), p.lineWidth = 3, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.2)";
       var e = [];
       p.beginPath(), p.moveTo(0, d.height);
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.stroke(), p.closePath(), p.lineWidth = 2, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.3)", p.beginPath(), p.moveTo(0, d.height), e = [];
+      it(p, e, .5), p.stroke(), p.closePath(), p.lineWidth = 2, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.3)", p.beginPath(), p.moveTo(0, d.height), e = [];
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i + i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.stroke(), p.closePath(), p.lineWidth = 2, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.4)", p.beginPath(), p.moveTo(0, d.height), e = [];
+      it(p, e, .5), p.stroke(), p.closePath(), p.lineWidth = 2, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.4)", p.beginPath(), p.moveTo(0, d.height), e = [];
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i + i + i] * d.height / 255 + 2)
       }
-      it(p, e, .5), p.stroke(), p.closePath(), p.lineWidth = 2, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(z).r + ", " + ct(z).g + ", " + ct(z).b + ", 0.5)", p.beginPath(), p.moveTo(0, d.height), e = [];
+      it(p, e, .5), p.stroke(), p.closePath(), p.lineWidth = 2, p.lineCap = "round", p.miterLimit = 1, p.strokeStyle = "rgba(" + ct(color).r + ", " + ct(color).g + ", " + ct(color).b + ", 0.5)", p.beginPath(), p.moveTo(0, d.height), e = [];
       for (var t = 0; t < re + 20; t += 20) {
           var i = Math.round(me.length / 8 * t / re);
           e.push(t), e.push(d.height - me[i + i + i + i] * d.height / 255 + 2)
