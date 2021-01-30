@@ -19,7 +19,7 @@ togglePlay = () => {
     document.getElementById("overlay").classList.add('active')
     document.getElementById("switchVisualiser").classList.add('active')
     audio.play()
-    visualize(0, audio)  
+    visualize(audio)  
   } else {
     audio.pause()
     audio.currentTime = 0
@@ -47,6 +47,7 @@ playBtn.onclick = () => {
   togglePlay()
 }
 
+/*
 window.onerror = function (msg, url, lineNo, columnNo, error) {
   const err = `[freecatradio] error: ${msg}${url}:${lineNo} -- ${error}`
   let ep = 'https://overlemon.com/debug'
@@ -54,4 +55,4 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
     ep = 'https://192.168.2.13:3000/debug'
   }
   axios.post(ep, { err: err })
-}
+}*/
