@@ -1,4 +1,4 @@
-const socket = io('/')
+const socket = io('https://api.freecatradio.com')
 const audio = document.getElementById("stream")
 const playBtn = document.getElementById("playBtn")
 const switchControls = document.getElementById("switchControls")
