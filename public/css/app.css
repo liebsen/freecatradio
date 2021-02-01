@@ -6,9 +6,19 @@ html, body {
 body {
   background-color: black;
   font-family: 'Luckiest Guy';
-  font-weight: 500;
+  /* font-family: 'Wendy One'; */
+  font-weight: 800;
   color: white;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+input {
+  padding: 0.5rem 0.75rem;
+  background-color: #e11d7499;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
 }
 
 #app {
@@ -24,6 +34,64 @@ body {
   background-size: cover;
 }
 
+#chat {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  z-index: 30;
+  width: 320px;
+  height: 100%;
+  background-color: #0009;
+  top: 0;
+  right: -330px;
+  transition: all 0.1s linear;
+}
+
+#chat.active {
+  right: 0;
+}
+
+#chat .chat-container {
+  padding: 1rem;
+}
+
+#chat .chat-container .toggleChat {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+#chat .chat-container .toggleChat .mdi-close {
+  color: white;
+}
+
+#chat_content .flag {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#chat_content .username {
+  color: #eee9;
+}
+
+#chat_content p.message {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+#username {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  color: white;
+  font-size: 1.5rem;  
+}
+
 .foreground {
   text-align: center;
   background-color: transparent;
@@ -35,7 +103,7 @@ body {
   margin-bottom: 0;
   font-size: 3.5rem;
   text-transform: uppercase;
-  text-shadow: 10px 10px 0 rgba(0,0,0,0.75);
+  text-shadow: 6px 6px 0 rgba(0,0,0,0.75);
 }
 
 .foreground h2 {
@@ -139,6 +207,11 @@ body {
 .social .mdi-github {
   color: #171515;
 }
+
+.social .mdi-chat-processing {
+ color: #e11d74; 
+}
+
 
 .pointer {
   cursor: pointer;

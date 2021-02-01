@@ -1,0 +1,1 @@
+minify public/css/app.css public/css/animate.css public/css/visualizer.css public/css/snackbar.css public/css/materialdesignicons.min.css > public/css/bundle.css && minify public/js/snackbar.js public/js/axios.min.js public/js/nowplaying.js public/js/visualizer.js public/js/pwa.js public/js/status.js public/js/app.js > public/js/bundle.js

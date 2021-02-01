@@ -10,12 +10,9 @@
   <meta property="og:url" content="https://freecatradio.com" />
   <meta property="og:image" content="https://freecatradio.com/img/splash.jpg" />
   <meta property="og:description" content="Freedom Cats Radio" /> 
-  <link rel="stylesheet" type="text/css" href="/css/app.css" />
-  <link rel="stylesheet" type="text/css" href="/css/animate.css" />
-  <link rel="stylesheet" type="text/css" href="/css/visualizer.css" />
-  <link rel="stylesheet" type="text/css" href="/css/snackbar.css" />
-  <link rel="stylesheet" type="text/css" href="/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bundle.css" />
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <!--link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet"-->
   <title>Free Cat Radio</title>
 </head>
 <body>
@@ -66,6 +63,11 @@
           <span class="mdi mdi-folder-music"></span>
         </span>
       </a>
+      <a href="#" class="toggleChat" title="Open chat">
+        <span class="icon pointer">
+          <span class="mdi mdi-chat-processing"></span>
+        </span>
+      </a>
       <!--a href="https://github.com/liebsen/freecatradio" target="_blank" title="Access our Code Repository">
         <span class="icon pointer">
           <span class="mdi mdi-github"></span>
@@ -78,13 +80,22 @@
       </a>
     </div>
   </div>
-  <script src="/js/snackbar.js"></script>
-  <script src="/js/visualizer.js"></script>
-  <script src="/js/axios.min.js"></script>
-  <script src="/js/nowplaying.js"></script>
-  <script src="/js/pwa.js"></script>
-  <script src="/js/status.js"></script>
-  <script src="/js/app.js"></script>
-  <!--script src="/socket.io/socket.io.js"></script-->
+  <div id="chat">
+    <div class="chat-container">
+      <a href="#" id="username"></a>
+      <div class="toggleChat">
+        <a href="#" class="icon">
+          <span class="mdi mdi-close mdi-36px"></span>
+        </a>
+      </div>
+      <div id="chat_content"></div>
+      <form id="chat_form">
+        <input type="text" id="message" placeholder="Input message..."/>
+        <input type="submit" value="Send"/>
+      </form>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/bundle.js"></script>
 </body>
 </html>

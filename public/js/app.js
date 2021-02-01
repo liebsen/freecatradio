@@ -1,8 +1,34 @@
-let audio = document.getElementById("stream")
-let playBtn = document.getElementById("playBtn")
-let switchControls = document.getElementById("switchControls")
-let switchColor = document.getElementById("switchColor")
-let switchVisualiser = document.getElementById("switchVisualiser")
+const socket = io('http://localhost:3009')
+const audio = document.getElementById("stream")
+const playBtn = document.getElementById("playBtn")
+const switchControls = document.getElementById("switchControls")
+const switchColor = document.getElementById("switchColor")
+const switchVisualiser = document.getElementById("switchVisualiser")
+const chatForm = document.getElementById("chat_form")
+const chatContent = document.getElementById("chat_content")
+const userName = document.getElementById("username")
+const messageInput = document.getElementById("message")
+let initChat = false
+
+document.querySelectorAll(".toggleChat").forEach(e => {
+  e.onclick = () => {
+    if (!initChat) {
+      socket.emit('request_history')
+      socket.on('history', data => {
+        data.history.forEach(e => {
+          addLine(e)
+        })
+      })
+      let user = 'Anonymous'
+      if (localStorage.getItem('username')) {
+        user = localStorage.getItem('username')
+      }
+      userName.innerHTML = user
+      initChat = true
+    }
+    document.getElementById('chat').classList.toggle('active')
+  }
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loading')) {
@@ -48,7 +74,6 @@ let nextColor = () => {
     index = 0
   }
   color = `#${colors[index]}`
-  // document.getElementById('overlay').style.backgroundColor = `${color}99`
 }
 
 switchVisualiser.onclick = () => {
@@ -61,6 +86,37 @@ switchColor.onclick = () => {
 
 playBtn.onclick = () => {
   togglePlay()
+}
+
+userName.onclick = () => {
+  var username = prompt('Input your name', 'Anonymous')
+  if (username.length > 10) {
+    username = username.substring(0,10)
+  }
+  socket.emit('change_username', username)
+  localStorage.setItem('username', username)
+  userName.innerHTML = username
+}
+
+chatForm.onsubmit = () => {
+  const message = messageInput.value
+  messageInput.value = ''
+  socket.emit('message', { message : message })
+  return false
+}
+
+messageInput.onkeyup = () => {
+  if (messageInput.value) {
+    socket.emit('typing')
+  }
+}
+
+socket.on('message', data => {
+  addLine(data)
+})
+
+addLine = data => {
+  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/img/flags/${data.country}.png')"></span><span class="username">${data.username}</span> ${data.message}</p>`
 }
 
 /*
