@@ -27,6 +27,7 @@ document.querySelectorAll(".toggleChat").forEach(e => {
       initChat = true
     }
     document.getElementById('chat').classList.toggle('active')
+    document.getElementById('chatControls').classList.toggle('active')
   }
 })
 
