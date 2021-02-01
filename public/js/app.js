@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3009')
+const socket = io('/')
 const audio = document.getElementById("stream")
 const playBtn = document.getElementById("playBtn")
 const switchControls = document.getElementById("switchControls")
