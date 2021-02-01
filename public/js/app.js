@@ -101,8 +101,10 @@ userName.onclick = () => {
 
 chatForm.onsubmit = () => {
   const message = messageInput.value
-  messageInput.value = ''
-  socket.emit('message', { message : message })
+  if (message.trim().length) {
+    messageInput.value = ''
+    socket.emit('message', { message : message })
+  }
   return false
 }
 
@@ -117,7 +119,7 @@ socket.on('message', data => {
 })
 
 addLine = data => {
-  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/img/flags/${data.country}.png')"></span><span class="username">${data.username}</span> ${data.message}</p>`
+  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message}</p>`
 }
 
 /*

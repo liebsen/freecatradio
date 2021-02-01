@@ -29,7 +29,6 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
         console.log(err)
       } else {
         const parts = stdout.split("\t")
-        console.log(parts)
         if (parts[1]) {
           socket.country = parts[1].toLowerCase()
         } else {

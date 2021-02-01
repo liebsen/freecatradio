@@ -88,12 +88,14 @@ a {
 
 #chat_content .flag {
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 0.5rem;
+  width: 18px;
+  height: 18px;
+  margin-right: .5rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  position: relative;
+  top: 3px;
 }
 
 #chat_content .username {
