@@ -23,12 +23,7 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
   io.on('connection', socket => {
 
     socket.username = "Anonymous"
-
-    // let ip = socket.handshake.address || '181.209.106.242'
-    var ip = socket.handshake.headers["x-real-ip"]
-    var ip2 = socket.conn.remoteAddress
-    console.log(ip)
-    console.log(ip2)
+    var ip = socket.handshake.headers["x-real-ip"] || '181.209.106.242'
     exec(`./iplookup ${ip}`, (err, stdout, stderr) => {
       if (err) {
         console.log(err)
