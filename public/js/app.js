@@ -19,11 +19,12 @@ document.querySelectorAll(".toggleChat").forEach(e => {
           addLine(e)
         })
       })
-      let user = 'Anonymous'
+      let username = 'Anonymous'
       if (localStorage.getItem('username')) {
-        user = localStorage.getItem('username')
+        username = localStorage.getItem('username')
+        socket.emit('change_username', username)
       }
-      userName.innerHTML = user
+      userName.innerHTML = username
       initChat = true
     }
     document.getElementById('chat').classList.toggle('active')

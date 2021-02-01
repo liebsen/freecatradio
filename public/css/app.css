@@ -15,15 +15,24 @@ body {
 
 input {
   font-family: 'Luckiest Guy';
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem;
+  font-size: 1rem;
   background-color: #e11d7499;
   color: white;
   border: none;
   border-radius: 0.25rem;
 }
 
+input:hover {
+  background-color: #e11d74;
+}
+
 a {
   text-decoration: none;
+}
+
+.is-clickable {
+  cursor: pointer;
 }
 
 #app {
@@ -59,7 +68,7 @@ a {
   position: absolute;
   display: flex;
   align-items: flex-end;
-  z-index: 30;
+  z-index: 100;
   width: 320px;
   height: 100%;
   background-color: #0009;
@@ -86,11 +95,18 @@ a {
   color: white;
 }
 
+#chat_form {
+  display: flex;
+}
+
+#chat_content {
+  text-shadow: 3px 3px 0 #00099;
+}
 #chat_content .flag {
   display: inline-block;
   width: 18px;
   height: 18px;
-  margin-right: .5rem;
+  margin-right: .25rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
