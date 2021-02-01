@@ -24,8 +24,10 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
 
     socket.username = "Anonymous"
 
-    let ip = socket.handshake.address || '181.209.106.242'
-    console.log(socket.handshake)
+    // let ip = socket.handshake.address || '181.209.106.242'
+    let ip = socket.request.connection.remoteAddress || '181.209.106.242'
+    console.log(socket.request.connection)
+    console.log(ip)
     exec(`./iplookup ${ip}`, (err, stdout, stderr) => {
       if (err) {
         console.log(err)
