@@ -1,6 +1,19 @@
 let currentSong = null
 let currentListeners = null
 
+let _utf8_encode = function(e) {
+  e = e.replace(/\r\n/g, "\n");
+  for (var t = "", i = 0; i < e.length; i++) {
+      var a = e.charCodeAt(i);
+      a < 128 ? t += String.fromCharCode(a) : a > 127 && a < 2048 ? (t += String.fromCharCode(a >> 6 | 192), t += String.fromCharCode(63 & a | 128)) : (t += String.fromCharCode(a >> 12 | 224), t += String.fromCharCode(a >> 6 & 63 | 128), t += String.fromCharCode(63 & a | 128))
+  }
+  return t
+}
+let _utf8_decode = function(e) {
+  for (var t = "", i = 0, a = 0, o = 0, n = 0; i < e.length;)(n = e.charCodeAt(i)) < 128 ? (t += String.fromCharCode(n), i++) : n > 191 && n < 224 ? (a = e.charCodeAt(i + 1), t += String.fromCharCode((31 & n) << 6 | 63 & a), i += 2) : (a = e.charCodeAt(i + 1), o = e.charCodeAt(i + 2), t += String.fromCharCode((15 & n) << 12 | (63 & a) << 6 | 63 & o), i += 3);
+  return t
+}
+
 nowPlaying = () => {
   const nowplaying = document.querySelector('.nowplaying')
   const headphones = '<span class="mdi mdi-headphones"></span> '
@@ -33,7 +46,7 @@ nowPlaying = () => {
       currentSong = currentTitle
       setTimeout(() => {
         nowplaying.classList.remove('fadeInUp', 'fadeOutUp')
-        nowplaying.innerHTML = icon + decodeURIComponent(currentTitle)
+        nowplaying.innerHTML = icon + _utf8_decode(currentTitle)
         nowplaying.classList.add('fadeInUp')
       }, 1000)
     }
