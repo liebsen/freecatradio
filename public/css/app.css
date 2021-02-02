@@ -74,11 +74,16 @@ a {
   background-color: #0009;
   top: 0;
   right: 0;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
 }
 
 #chat.active {
   display: flex;
-  left: 0;
 }
 
 #chat .chat-container {
@@ -98,15 +103,19 @@ a {
 
 #chat_form {
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  grid-gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
-#chat_form button {
-  margin-left: 0.5rem;
+#chat_form input {
+  flex: 1;
 }
 
 #chat_content {
   max-height: 82vh;
+  width: 100%;
   overflow: auto;
 }
 
@@ -137,6 +146,7 @@ a {
 #chat_content p.message {
   margin-top: 0;
   margin-bottom: 0.25rem;
+  line-height: 1.25;
   text-shadow: 2px 2px 0 #0003;
 }
 
@@ -147,6 +157,7 @@ a {
   left: 1.25rem;
   color: white;
   font-size: 1.5rem;  
+  text-shadow: 3px 3px 0 #0003;
 }
 
 .foreground {

@@ -91,7 +91,8 @@ playBtn.onclick = () => {
 }
 
 userName.onclick = () => {
-  var username = prompt('Input your name', 'Anonymous')
+  const current = localStorage.getItem('username') || 'Anonymous'
+  var username = prompt('Input your name', current)
   if (username.length > 10) {
     username = username.substring(0,10)
   }
