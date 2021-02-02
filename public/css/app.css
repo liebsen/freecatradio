@@ -13,7 +13,7 @@ body {
   overflow: hidden;
 }
 
-input {
+button, input {
   font-family: 'Luckiest Guy';
   padding: 0.75rem;
   font-size: 1rem;
@@ -23,7 +23,7 @@ input {
   border-radius: 0.25rem;
 }
 
-input:hover {
+button:hover, input:hover {
   background-color: #e11d74;
 }
 
@@ -99,9 +99,13 @@ a {
   display: flex;
 }
 
-#chat_content {
-  text-shadow: 3px 3px 0 #00099;
+#chat_form button {
+  margin-left: 0.5rem;
 }
+
+#chat_content {
+}
+
 #chat_content .flag {
   display: inline-block;
   width: 18px;
@@ -124,6 +128,7 @@ a {
 
 #username {
   position: absolute;
+  z-index: 1;
   top: 1.25rem;
   left: 1.25rem;
   color: white;

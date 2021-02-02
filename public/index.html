@@ -30,7 +30,7 @@
       </span>
     </div>
     <div id="switchControls" class="delay5">
-      <span id="switchColor" class="mdi mdi-palette mdi-24px" title="Switch color"></span>
+      <span id="switchColor" class="mdi mdi-invert-colors mdi-24px" title="Switch color"></span>
       <span id="switchVisualiser" class="mdi mdi-brush mdi-24px" title="Switch visualizer"></span>
     </div>
     <audio id="stream" src="https://freecatradio.com/live" crossorigin="anonymous" preload="metadata" controls></audio>
@@ -91,7 +91,11 @@
       <div id="chat_content"></div>
       <form id="chat_form">
         <input type="text" id="message" placeholder="Input message..."/>
-        <input type="submit" class="is-clickable" value="Send"/>
+        <button type="submit" class="is-clickable">
+          <span class="icon">
+            <span class="mdi mdi-tooltip-text-outline mdi-24px"></span>
+          </span>
+        </button>
       </form>
     </div>
   </div>
