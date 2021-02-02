@@ -1,6 +1,5 @@
 html, body {
   margin: 0;
-  height: 100%;
 }
 
 body {
@@ -36,12 +35,13 @@ a {
 }
 
 #app {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;        /* for single line flex container */
   align-content: center;
+  width: 100vw;
+  height: 100vh;
   background-image: url('/img/cute-4224819_960_720.jpeg');
   background-repeat: no-repeat;
   background-position: center right;
@@ -66,19 +66,19 @@ a {
 
 #chat {
   position: absolute;
-  display: flex;
+  display: none;
   align-items: flex-end;
   z-index: 100;
   width: 320px;
   height: 100%;
   background-color: #0009;
   top: 0;
-  right: -330px;
-  transition: all 0.1s linear;
+  right: 0;
 }
 
 #chat.active {
-  right: 0;
+  display: flex;
+  left: 0;
 }
 
 #chat .chat-container {
@@ -120,15 +120,24 @@ a {
   background-size: contain;
   position: relative;
   top: 3px;
+  box-shadow: 2px 2px 0 #0003;
+  border-radius: 100%;
 }
 
 #chat_content .username {
-  color: #eee9;
+  color: #ff0e;
+}
+
+#chat_content .time {
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  color: #fff6;
 }
 
 #chat_content p.message {
   margin-top: 0;
   margin-bottom: 0.25rem;
+  text-shadow: 2px 2px 0 #0003;
 }
 
 #username {

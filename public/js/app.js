@@ -129,7 +129,8 @@ socket.on('message', data => {
 })
 
 addLine = data => {
-  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message}</p>`
+  const time = moment(data.created).fromNow()
+  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message} <span class="time">${time}</span></p>`
   scrollToBottom()
 }
 

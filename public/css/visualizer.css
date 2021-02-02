@@ -25,8 +25,8 @@
   left: 0;
   top: 0;
   background-color: #0009;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   transition: opacity 0.5s ease-in;
 }
 
@@ -41,9 +41,8 @@
   position: absolute;
   top: 0px;
   z-index: 20;
-  /* background-color: transparent;
-   transform: scale(0.75) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg) translateX(-2em) translateY(-2em);
-  filter: blur(1px); */
+  width: 100vw;
+  height: 100vh;
 }
 
 #canvas.active {
