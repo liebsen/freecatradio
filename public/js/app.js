@@ -115,12 +115,22 @@ messageInput.onkeyup = () => {
   }
 }
 
+let scrollToBottom = () => {
+  setTimeout(() => {
+    const box = document.getElementById('chat_content')
+    if (box) {
+      box.scrollTop = box.scrollHeight
+    }
+  }, 50)
+}
+
 socket.on('message', data => {
   addLine(data)
 })
 
 addLine = data => {
   chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message}</p>`
+  scrollToBottom()
 }
 
 /*

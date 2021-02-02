@@ -82,7 +82,8 @@ a {
 }
 
 #chat .chat-container {
-  padding: 1rem;
+  padding: 0.75rem 1rem;
+  max-height: 100vh;
 }
 
 #chat .chat-container .toggleChat {
@@ -97,6 +98,7 @@ a {
 
 #chat_form {
   display: flex;
+  margin-top: 0.5rem;
 }
 
 #chat_form button {
@@ -104,6 +106,8 @@ a {
 }
 
 #chat_content {
+  max-height: 82vh;
+  overflow: auto;
 }
 
 #chat_content .flag {
@@ -123,7 +127,8 @@ a {
 }
 
 #chat_content p.message {
-  margin-top: 0
+  margin-top: 0;
+  margin-bottom: 0.25rem;
 }
 
 #username {
