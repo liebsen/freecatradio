@@ -106,6 +106,9 @@ chatForm.onsubmit = () => {
   const message = messageInput.value
   if (message.trim().length) {
     messageInput.value = ''
+    if (message.length > 255) {
+      message = message.substr(0, 255) + '...'
+    }
     socket.emit('message', { message : message })
   }
   return false
