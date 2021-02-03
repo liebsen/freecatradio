@@ -38,14 +38,14 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
           socket.country = 'unknown'
         }
       }
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${username} joined` })
+      users = users.filter(e => e.sid != socket.id)
+      users.push({sid: socket.id, country: socket.country, username: username })
     })
 
     socket.on('disconnect', () => {
       io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} leaved` })
-    })
-
-    socket.on('join_chat', username => {
-      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${username} joined` })
+      users = users.filter(e => e.sid != socket.id)
     })
 
     socket.on('request_history', () => {
