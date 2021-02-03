@@ -27,6 +27,7 @@ document.querySelectorAll(".toggleChat").forEach(e => {
       userName.innerHTML = username
       initChat = true
       setInterval(updateTimestamps, 1000 * 60)
+      socket.emit('message', { username: 'botcat', country: 'botcat', message : `${username} has joined the chat` })
     }
     document.getElementById('chat').classList.toggle('active')
     document.getElementById('chatControls').classList.toggle('active')
@@ -41,43 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500)
   }
 })
-
-togglePlay = () => {
-  document.getElementById("switchControls").classList.remove('fadeOut', 'fadeIn')
-  if (!playBtn.classList.contains('is-playing')) {
-    playBtn.classList.add('is-playing')
-    document.getElementById("canvas").classList.add('active')
-    document.getElementById("overlay").classList.add('active')
-    document.getElementById("switchControls").classList.add('active')
-    audio.play()
-    visualize(audio)  
-  } else {
-    audio.pause()
-    audio.currentTime = 0
-    playBtn.classList.remove('is-playing')
-    document.getElementById("canvas").classList.remove('active')
-    document.getElementById("overlay").classList.remove('active')
-    document.getElementById("switchControls").classList.remove('active')
-  }
-}
-
-let nextVisualizer = () => {
-  let index = modes.findIndex(e => e === mode)
-  index++
-  if (index >= modes.length) {
-    index = 0
-  }
-  mode = modes[index]
-}
-
-let nextColor = () => {
-  let index = colors.findIndex(e => e === color.replace('#', ''))
-  index++
-  if (index >= colors.length) {
-    index = 0
-  }
-  color = `#${colors[index]}`
-}
 
 switchVisualiser.onclick = () => {
   nextVisualizer()
@@ -120,7 +84,49 @@ messageInput.onkeyup = () => {
   }
 }
 
-let scrollToBottom = () => {
+socket.on('message', data => {
+  addLine(data)
+})
+
+togglePlay = () => {
+  document.getElementById("switchControls").classList.remove('fadeOut', 'fadeIn')
+  if (!playBtn.classList.contains('is-playing')) {
+    playBtn.classList.add('is-playing')
+    document.getElementById("canvas").classList.add('active')
+    document.getElementById("overlay").classList.add('active')
+    document.getElementById("switchControls").classList.add('active')
+    audio.play()
+    visualize(audio)  
+  } else {
+    audio.pause()
+    audio.currentTime = 0
+    playBtn.classList.remove('is-playing')
+    document.getElementById("canvas").classList.remove('active')
+    document.getElementById("overlay").classList.remove('active')
+    document.getElementById("switchControls").classList.remove('active')
+  }
+}
+
+nextVisualizer = () => {
+  let index = modes.findIndex(e => e === mode)
+  index++
+  if (index >= modes.length) {
+    index = 0
+  }
+  mode = modes[index]
+}
+
+nextColor = () => {
+  let index = colors.findIndex(e => e === color.replace('#', ''))
+  index++
+  if (index >= colors.length) {
+    index = 0
+  }
+  color = `#${colors[index]}`
+}
+
+
+scrollToBottom = () => {
   setTimeout(() => {
     const box = document.getElementById('chat_content')
     if (box) {
@@ -129,17 +135,13 @@ let scrollToBottom = () => {
   }, 50)
 }
 
-socket.on('message', data => {
-  addLine(data)
-})
-
 addLine = data => {
   const time = moment(data.created).fromNow()
   chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message} <span class="time" value="${data.created}">${time}</span></p>`
   scrollToBottom()
 }
 
-let updateTimestamps = () => {
+updateTimestamps = () => {
   document.querySelectorAll('.time').forEach(e => {
     e.textContent = moment(e.getAttribute('value')).fromNow()
   })
