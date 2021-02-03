@@ -61,7 +61,7 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
       data.created = new Date()
       data.username = data.username || socket.username
       data.country = data.country || socket.country
-      if (socket.username !== 'botcat') {
+      if (data.username !== 'botcat') {
         db.collection('chat').insertOne(data)
       }
 		  io.sockets.emit('message', data);
