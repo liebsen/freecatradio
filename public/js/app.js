@@ -24,10 +24,10 @@ document.querySelectorAll(".toggleChat").forEach(e => {
         username = localStorage.getItem('username')
         socket.emit('change_username', username)
       }
+      socket.emit('join_chat', username)
       userName.innerHTML = username
       initChat = true
       setInterval(updateTimestamps, 1000 * 60)
-      socket.emit('message', { username: 'botcat', country: 'botcat', message : `${username} has joined the chat` })
     }
     document.getElementById('chat').classList.toggle('active')
     document.getElementById('chatControls').classList.toggle('active')

@@ -1,13 +1,15 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const mongo_url = process.env.MONGO_URL
+const { exec } = require('child_process')
+
 var moment = require('moment')
 var mongodb = require('mongodb')
 var server = require('http').Server(app)
 var io = require('socket.io')(server, { origins: '*:*', pingInterval: 15000})
 var port = process.env.PORT || 3009
-const mongo_url = process.env.MONGO_URL
-const { exec } = require('child_process')
+var users = []
 
 app.set('view engine', 'html')
 app.use(express.static(__dirname + '/public'))
@@ -38,6 +40,14 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
       }
     })
 
+    socket.on('disconnect', () => {
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} leaved` })
+    })
+
+    socket.on('join_chat', username => {
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${username} joined` })
+    })
+
     socket.on('request_history', () => {
       db.collection('chat').find({
         created: {
@@ -49,7 +59,9 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
     })
 
     socket.on('change_username', (data) => {
+      const ousername = socket.username
       socket.username = data
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${ousername} is now ${socket.username}` })
     })
 
     //listen on typing

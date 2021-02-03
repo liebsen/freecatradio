@@ -38,10 +38,6 @@ nowPlaying = () => {
     }
     if (listeners !== currentListeners) {
       console.log('👂', listeners)
-      if (listeners) {
-        const message = '.'.repeat(listeners)
-        socket.emit('message', { username: 'botcat', country: 'botcat', message : message })
-      }
       currentListeners = listeners
     }
     if (currentSong !== currentTitle) {
