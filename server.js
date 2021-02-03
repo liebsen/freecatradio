@@ -38,13 +38,13 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
           socket.country = 'unknown'
         }
       }
-      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} joined` })
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} joined`, created: new Date() })
       users = users.filter(e => e.sid != socket.id)
       users.push({sid: socket.id, country: socket.country, username: socket.username })
     })
 
     socket.on('disconnect', () => {
-      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} leaved` })
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} leaved`, created: new Date() })
       users = users.filter(e => e.sid != socket.id)
     })
 
@@ -61,7 +61,7 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
     socket.on('change_username', (data) => {
       const ousername = socket.username
       socket.username = data
-      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${ousername} is now ${socket.username}` })
+      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${ousername} is now ${socket.username}`, created: new Date() })
     })
 
     //listen on typing
