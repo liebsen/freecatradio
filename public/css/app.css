@@ -143,6 +143,12 @@ a {
   color: #fff6;
 }
 
+#username {
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 0 #0003;
+}
+
 #chat_content p.message {
   margin-top: 0;
   margin-bottom: 0.25rem;
@@ -150,7 +156,7 @@ a {
   text-shadow: 2px 2px 0 #0003;
 }
 
-#username {
+#chat .chat-container .profile {
   position: absolute;
   z-index: 1;
   top: 1.25rem;
