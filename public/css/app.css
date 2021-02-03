@@ -137,6 +137,10 @@ a {
   color: #ff0e;
 }
 
+#chat_content .username.botcat {
+    color: #38b301;
+}
+
 #chat_content .time {
   font-size: 0.75rem;
   margin-left: 0.25rem;

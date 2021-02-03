@@ -137,7 +137,7 @@ scrollToBottom = () => {
 
 addLine = data => {
   const time = moment(data.created).fromNow()
-  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message} <span class="time" value="${data.created}">${time}</span></p>`
+  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username ${data.username}">${data.username}</span> ${data.message} <span class="time" value="${data.created}">${time}</span></p>`
   scrollToBottom()
 }
 
