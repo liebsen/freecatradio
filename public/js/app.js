@@ -26,6 +26,7 @@ document.querySelectorAll(".toggleChat").forEach(e => {
       }
       userName.innerHTML = username
       initChat = true
+      setInterval(updateTimestamps, 1000 * 60)
     }
     document.getElementById('chat').classList.toggle('active')
     document.getElementById('chatControls').classList.toggle('active')
@@ -131,8 +132,14 @@ socket.on('message', data => {
 
 addLine = data => {
   const time = moment(data.created).fromNow()
-  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message} <span class="time">${time}</span></p>`
+  chatContent.innerHTML+= `<p class="message"><span class="flag" style="background-image:url('/flags/${data.country}.svg')"></span><span class="username">${data.username}</span> ${data.message} <span class="time" value="${data.created}">${time}</span></p>`
   scrollToBottom()
+}
+
+let updateTimestamps = () => {
+  document.querySelectorAll('.time').forEach(e => {
+    e.textContent = moment(e.getAttribute('value')).fromNow()
+  })
 }
 
 /*
