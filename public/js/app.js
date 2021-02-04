@@ -18,15 +18,15 @@ document.querySelectorAll(".toggleChat").forEach(e => {
         data.history.forEach(e => {
           addLine(e)
         })
+        let username = 'Anonymous'
+        if (localStorage.getItem('username')) {
+          username = localStorage.getItem('username')
+          socket.emit('change_username', username)
+        }
+        userName.innerHTML = username
+        initChat = true
+        setInterval(updateTimestamps, 1000 * 60)
       })
-      let username = 'Anonymous'
-      if (localStorage.getItem('username')) {
-        username = localStorage.getItem('username')
-        socket.emit('change_username', username)
-      }
-      userName.innerHTML = username
-      initChat = true
-      setInterval(updateTimestamps, 1000 * 60)
     }
     document.getElementById('chat').classList.toggle('active')
     document.getElementById('chatControls').classList.toggle('active')
