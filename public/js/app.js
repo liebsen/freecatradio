@@ -23,6 +23,7 @@ document.querySelectorAll(".toggleChat").forEach(e => {
           username = localStorage.getItem('username')
           socket.emit('change_username', username)
         }
+        socket.emit('message', { username: 'botcat', country: 'botcat', message : `${username} joined`, created: new Date() })
         userName.innerHTML = username
         initChat = true
         setInterval(updateTimestamps, 1000 * 60)

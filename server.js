@@ -38,7 +38,7 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
           socket.country = 'unknown'
         }
       }
-      io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} joined`, created: new Date() })
+      // io.sockets.emit('message', { username: 'botcat', country: 'botcat', message : `${socket.username} joined`, created: new Date() })
       users = users.filter(e => e.sid != socket.id)
       users.push({sid: socket.id, country: socket.country, username: socket.username })
     })
