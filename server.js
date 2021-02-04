@@ -51,7 +51,7 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
     socket.on('request_history', () => {
       db.collection('chat').find({
         created: {
-          $gte: new Date(moment().subtract(1, 'day').format())
+          $gte: new Date(moment().subtract(3, 'days').format())
         }
       }).toArray((err, history) => {
         socket.emit('history', { history : history })  
