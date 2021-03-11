@@ -52,8 +52,6 @@ function visualize(source) {
   var analyser = context.createAnalyser()
   var listen = context.createGain()
   var canvas = document.getElementById("canvas")
-  var WIDTH = (canvas.width = window.innerWidth)
-  var HEIGHT = (canvas.height = window.innerHeight)
   var p = canvas.getContext("2d")
   const re = d.width
   var ge = 0
@@ -66,7 +64,6 @@ function visualize(source) {
   src.connect(listen);
   listen.connect(analyser);
   analyser.connect(context.destination);
-  // analyser.fftSize = 2**13;
   analyser.fftSize = 1024;
   var frequencyBins = analyser.fftSize / 2;
 
