@@ -147,6 +147,9 @@ updateTimestamps = () => {
   })
 }
 
+
+moment.locale('es')
+
 /*
 window.onerror = function (msg, url, lineNo, columnNo, error) {
   const err = `[freecatradio] error: ${msg}${url}:${lineNo} -- ${error}`
