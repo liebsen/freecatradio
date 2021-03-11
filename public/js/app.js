@@ -148,7 +148,7 @@ updateTimestamps = () => {
 }
 
 
-moment.locale('es')
+// moment.locale('es')
 
 /*
 window.onerror = function (msg, url, lineNo, columnNo, error) {
