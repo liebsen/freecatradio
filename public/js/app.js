@@ -35,6 +35,7 @@ document.querySelectorAll(".toggleChat").forEach(e => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
+  moment.locale('es')
   if (document.getElementById('loading')) {
     document.getElementById('loading').classList.add('animated', 'fadeOut')
     setTimeout(() => {
@@ -146,9 +147,6 @@ updateTimestamps = () => {
     e.textContent = moment(e.getAttribute('value')).fromNow()
   })
 }
-
-
-// moment.locale('es')
 
 /*
 window.onerror = function (msg, url, lineNo, columnNo, error) {
