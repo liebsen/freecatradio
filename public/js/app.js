@@ -4,6 +4,7 @@ const playBtn = document.getElementById("playBtn")
 const switchControls = document.getElementById("switchControls")
 const switchColor = document.getElementById("switchColor")
 const switchVisualiser = document.getElementById("switchVisualiser")
+const shuffleVisualiser = document.getElementById("shuffleVisualiser")
 const chatForm = document.getElementById("chat_form")
 const chatContent = document.getElementById("chat_content")
 const userName = document.getElementById("username")
@@ -45,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 switchVisualiser.onclick = () => {
   nextVisualizer()
+}
+
+shuffleVisualiser.onclick = () => {
+  randomVisualizer()
 }
 
 switchColor.onclick = () => {
@@ -105,6 +110,12 @@ togglePlay = () => {
     document.getElementById("overlay").classList.remove('active')
     document.getElementById("switchControls").classList.remove('active')
   }
+}
+
+randomVisualizer = () => {
+  mode = modes[Math.floor(Math.random() * modes.length)]
+  color = colors[Math.floor(Math.random() * colors.length)]
+  color = `#${color}`
 }
 
 nextVisualizer = () => {
