@@ -7,11 +7,27 @@
   bottom: 0;
   left: 0;
   padding: 1rem;
-  transition: opacity 0.25s ease-in;
+  transition: opacity 0.15s ease-in;
 }
 
 #switchControls.active {
   opacity: 0.5;
+}
+
+#switchControls > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px dashed #fff3;
+  opacity: 0.25;
+  transition: opacity 0.15s ease-in; 
+  margin-right: 0.5rem;
+}
+
+#switchControls > span:hover {
+  opacity: 0.9;
 }
 
 #switchControls:hover {
