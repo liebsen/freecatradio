@@ -59,11 +59,12 @@
 }
 
 #canvas.active {
-  opacity: 0.75;
+  opacity: 1;
+  filter: contrast(200%);
 }
 
 #overlay.active {
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 audio {
