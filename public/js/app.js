@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('loading')) {
     document.getElementById('loading').classList.add('animated', 'fadeOut')
     setTimeout(() => {
-      document.getElementById('loading').remove()  
+      document.getElementById('loading').remove()
+      playBtn.onclick()      
     }, 500)
   }
 })

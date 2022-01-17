@@ -1,5 +1,6 @@
 html, body {
   margin: 0;
+  overflow: hidden;  
 }
 
 body {
@@ -13,7 +14,6 @@ body {
   background-repeat: no-repeat;
   background-position: center right;
   background-size: cover;
-  overflow: hidden;
 }
 
 button, input {
@@ -126,8 +126,8 @@ a {
 
 #chat_content .flag {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   margin-right: .25rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -136,6 +136,7 @@ a {
   top: 4px;
   box-shadow: 2px 2px 0 #0003;
   border-radius: 100%;
+  border: 2px solid wheat;
 }
 
 #chat_content .username {

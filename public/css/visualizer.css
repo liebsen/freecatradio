@@ -59,11 +59,11 @@
 }
 
 #canvas.active {
-  opacity: 1;
+  opacity: 0.75;
 }
 
 #overlay.active {
-  opacity: 0.9;
+  opacity: 0.75;
 }
 
 audio {
