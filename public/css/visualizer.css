@@ -18,7 +18,7 @@
   width: 2.5rem;
   height: 2.5rem;
   border: 3px dashed #fff3;
-  opacity: 0.5;
+  opacity: 0.85;
   transition: opacity 0.15s ease-in; 
   margin-right: 0.5rem;
 }
@@ -60,7 +60,7 @@
 
 #canvas.active {
   opacity: 1;
-  filter: contrast(200%);
+  filter: brightness(5);
 }
 
 #overlay.active {
