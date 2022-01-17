@@ -101,6 +101,9 @@ a {
 
 #chat .chat-container .toggleChat .mdi-close {
   color: white;
+  font-size: 4rem;
+  position: relative;
+  top: -0.25rem;
 }
 
 #chat_form {
