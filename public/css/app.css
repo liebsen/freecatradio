@@ -396,8 +396,8 @@ a {
 
 @media screen and (min-width:1024px), print {
   #app, #chatControls {
-    zoom: 1.8; 
-    transform: scale(1.8);
+    zoom: 1.5; 
+    transform: scale(1.5);
     transform-origin: center;
   }
 }
