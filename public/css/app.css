@@ -5,9 +5,10 @@ html, body {
 
 body {
   background-color: black;
-  font-family: 'Luckiest Guy';
+  font-family: 'Dimbo';
   /* font-family: 'Wendy One'; */
   font-weight: 800;
+  font-size: 1.5rem;
   color: white;
   -webkit-font-smoothing: antialiased;
   background-image: url('/img/cute-4224819_960_720.jpeg');
@@ -17,7 +18,7 @@ body {
 }
 
 button, input {
-  font-family: 'Luckiest Guy';
+  font-family: 'Dimbo';
   padding: 0.75rem;
   font-size: 1rem;
   background-color: #e11d7499;
