@@ -1,14 +1,28 @@
+@font-face {
+  font-family: "MontserratAlternates";
+  src: url("../fonts/MontserratAlternates.ttf");
+}
+@font-face {
+  font-family: "MontserratAlternatesBold";
+  src: url("../fonts/MontserratAlternates-Bold.ttf");
+}
+@font-face {
+  font-family: "MontserratAlternatesBlack";
+  src: url("../fonts/MontserratAlternates-Black.ttf");
+}
+
 html, body {
   margin: 0;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 body {
   background-color: black;
-  font-family: 'Dimbo';
+  font-family: 'MontserratAlternates';
   /* font-family: 'Wendy One'; */
   font-weight: 800;
   font-size: 1.5rem;
+  letter-spacing: -1px;
   color: white;
   -webkit-font-smoothing: antialiased;
   background-image: url('/img/cute-4224819_960_720.jpeg');
@@ -18,7 +32,7 @@ body {
 }
 
 button, input {
-  font-family: 'Dimbo';
+  font-family: 'MontserratAlternates';
   padding: 0.75rem;
   font-size: 1rem;
   background-color: #e11d7499;
@@ -35,6 +49,9 @@ a {
   text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'MontserratAlternatesBlack';
+}
 .is-clickable {
   cursor: pointer;
 }
@@ -103,9 +120,10 @@ a {
 
 #chat .chat-container .toggleChat .mdi-close {
   color: white;
-  font-size: 4rem;
+  font-size: 2rem;
   position: relative;
-  top: -0.25rem;
+  top: .5rem;
+  right: 0.75rem;
 }
 
 #chat_form {
