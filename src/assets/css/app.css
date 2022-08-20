@@ -21,7 +21,7 @@ body {
   font-family: 'MontserratAlternates';
   /* font-family: 'Wendy One'; */
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: -1px;
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -201,6 +201,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   background-color: transparent;
   z-index: 30;
+}
+
+.banner {
+  max-width: 90vw;
+  object-fit: contain;
 }
 
 .foreground h1 {
