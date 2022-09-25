@@ -398,9 +398,6 @@ a {
 }
 
 @media screen and (max-width:440px), print {
-  .foreground h1 {  
-    font-size: 3rem;
-  }
   .foreground h2 {
     font-size: 1.25rem;
   }
