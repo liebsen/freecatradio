@@ -102,7 +102,7 @@ togglePlay = () => {
     document.getElementById("overlay").classList.add('active')
     document.getElementById("switchControls").classList.add('active')
     audio.play()
-    visualize(audio)  
+    // visualize(audio)  
   } else {
     audio.pause()
     audio.currentTime = 0

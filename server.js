@@ -17,13 +17,13 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json({ type: 'application/json' }))
 app.use(express.json())
 
-mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, database) {
+mongodb.MongoClient.connect(mongo_url, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+}, function(err, database) {
   if(err) throw err
-
   const db = database.db(mongo_url.split('/').reverse()[0])
-
   io.on('connection', socket => {
-
     socket.username = "Anonymous"
     var ip = socket.handshake.headers["x-real-ip"] || '181.209.106.242'
     exec(`./iplookup ${ip}`, (err, stdout, stderr) => {
@@ -31,7 +31,7 @@ mongodb.MongoClient.connect(mongo_url, { useUnifiedTopology: true, useNewUrlPars
         console.log(err)
       } else {
         const parts = stdout.split("\t")
-        console.log(parts)
+        // console.log(parts)
         if (parts[1]) {
           socket.country = parts[1].toLowerCase()
         } else {
