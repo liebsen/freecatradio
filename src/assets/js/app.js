@@ -161,7 +161,6 @@ updateTimestamps = () => {
 
 moment.locale('es')
 
-/*
 window.onerror = function (msg, url, lineNo, columnNo, error) {
   const err = `[freecatradio] error: ${msg}${url}:${lineNo} -- ${error}`
   let ep = 'https://overlemon.com/debug'
@@ -169,4 +168,4 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
     ep = 'https://192.168.2.13:3000/debug'
   }
   axios.post(ep, { err: err })
-}*/
+}
